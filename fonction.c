@@ -2,8 +2,9 @@
 
 int printf_char(va_list args)
 {
-    printf("%c", va_arg(args, int));
-    return (0);
+    int a;
+    a = printf("%c", va_arg(args, int));
+    return (a);
 }
 int printf_st(va_list args)
 {
@@ -15,7 +16,7 @@ int printf_st(va_list args)
 int printf_persent()
 {
     putchar('%');
-    return (0);
+    return (1);
 }
 
 int _printf(const char *format, ...)
@@ -29,7 +30,7 @@ int _printf(const char *format, ...)
     int i = 0;
     int z = 0;
     int b = 0;
-    int len;
+    int len = 0;
 
     va_list args;
 
@@ -56,11 +57,7 @@ int _printf(const char *format, ...)
                 {
                     if (format[z] == ops[i].opp)
                     {
-                        len = (ops[i].f(args));
-                        if (format[z] == 's')
-                        {
-                            return (len);
-                        }
+                        len += ops[i].f(args);
                         break;
                     }
                     i++;
@@ -81,6 +78,10 @@ int _printf(const char *format, ...)
 
         i = 0;
         z++;
+    }
+    if (len != 0)
+    {
+        return (len);
     }
     z = z - b;
     va_end(args);
