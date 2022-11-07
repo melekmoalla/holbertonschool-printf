@@ -53,7 +53,6 @@ int _printf(const char *format, ...)
         i = 0;
         z++;
     }
-    printf("\n");
     va_end(args);
     return (z);
 }
