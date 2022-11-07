@@ -13,6 +13,6 @@ typedef struct op
 
 int printf_char(va_list args);
 int printf_st(va_list args);
-int printf_persent();
+int printf_persent(va_list args);
 int _printf(const char *format, ...);
 #endif
