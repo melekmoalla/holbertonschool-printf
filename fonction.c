@@ -54,12 +54,13 @@ int _printf(const char *format, ...)
             else
             {
             }
-        }
-        if (i == 3)
-        {
-            b = b - 1;
-            z = z - 1;
-            putchar(format[z]);
+
+            if (i == 3)
+            {
+                b = b - 1;
+                z = z - 1;
+                putchar(format[z]);
+            }
         }
         else
         {
