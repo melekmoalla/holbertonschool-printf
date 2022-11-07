@@ -7,9 +7,10 @@
 
 typedef struct op
 {
-    char opp;
-    int (*f)(va_list);
+	char opp;
+	int (*f)(va_list);
 } op_t;
+
 int printf_char(va_list args);
 int printf_st(va_list args);
 int printf_persent();
