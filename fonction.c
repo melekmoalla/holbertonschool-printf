@@ -29,10 +29,8 @@ int _printf(const char *format, ...)
 				for (i = 0; i < 3; i++)
 				{
 					if (format[z] == ops[i].opp)
-					{
 						len += ops[i].f(args);
-						break;
-					}
+					break;
 				}
 				if (i == 3)
 				{
@@ -49,4 +47,3 @@ int _printf(const char *format, ...)
 	return (len);
 	va_end(args);
 }
-
