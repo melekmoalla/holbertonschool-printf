@@ -27,11 +27,11 @@ int _printf(const char *format, ...)
 			else
 			{
 				for (i = 0; i < 3; i++)
-				{
 					if (format[z] == ops[i].opp)
+					{
 						len += ops[i].f(args);
-					break;
-				}
+						break;
+					}
 				if (i == 3)
 				{
 					b = b - 1;
