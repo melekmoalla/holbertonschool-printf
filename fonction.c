@@ -10,6 +10,7 @@ void printf_st(va_list args)
 }
 void printf_persent()
 {
+    putchar('%');
 }
 
 int _printf(const char *format, ...)
