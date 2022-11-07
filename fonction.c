@@ -51,15 +51,15 @@ int _printf(const char *format, ...)
                     i++;
                 }
             }
-            else
-            {
-            }
-
             if (i == 3)
             {
                 b = b - 1;
                 z = z - 1;
                 putchar(format[z]);
+            }
+            else
+            {
+                return (-1);
             }
         }
         else
