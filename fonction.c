@@ -17,7 +17,8 @@ int _printf(const char *format, ...)
 
     op_t ops[] = {
         {'c', printf_char},
-        {'s', printf_st}};
+        {'s', printf_st},
+        {'%', printf_persent}};
 
     int i = 0;
     int z = 0;
@@ -26,21 +27,31 @@ int _printf(const char *format, ...)
     va_list args;
 
     va_start(args, format);
-
+    if (format == NULL)
+    {
+        return (-1);
+    }
     while (format != 0 && format[z] != '\0')
     {
 
         if (format[z] == '%')
         {
+
             z++;
             b++;
-            while (i < 2)
+            if (format[z] != '\0')
             {
-                if (format[z] == ops[i].opp)
+                while (i < 2)
                 {
-                    ops[i].f(args);
+                    if (format[z] == ops[i].opp)
+                    {
+                        ops[i].f(args);
+                    }
+                    i++;
                 }
-                i++;
+            }
+            else
+            {
             }
         }
         else
