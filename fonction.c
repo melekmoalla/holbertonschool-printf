@@ -10,27 +10,29 @@ int _printf(const char *format, ...)
 	int i = 0, z = 0, b = 0, len = 0;
 
 	va_list args;
+
 	va_start(args, format);
 	if (format == NULL)
 		return (-1);
-	while (format != 0 && format[z] != '\0')
+	for (z = 0; format[z] != '\0'; z++)
 	{
 		if (format[z] == '%')
 		{
 			z++;
 			b++;
 			if (format[z] == '\0')
+			{
 				return (-1);
+			}
 			else
 			{
-				while (i < 3)
+				for (i = 0; i < 3; i++)
 				{
 					if (format[z] == ops[i].opp)
 					{
 						len += ops[i].f(args);
 						break;
 					}
-					i++;
 				}
 				if (i == 3)
 				{
@@ -42,10 +44,9 @@ int _printf(const char *format, ...)
 		}
 		else
 			putchar(format[z]);
-		i = 0;
-		z++;
 	}
 	len += z - (b * 2);
 	return (len);
 	va_end(args);
 }
+
