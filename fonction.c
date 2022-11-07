@@ -6,19 +6,13 @@
  */
 int _printf(const char *format, ...)
 {
-	op_t ops[] = {
-		{'c', printf_char},
-		{'s', printf_st},
-		{'%', printf_persent}};
-
+	op_t ops[] = {{'c', printf_char}, {'s', printf_st}, {'%', printf_persent}};
 	int i = 0, z = 0, b = 0, len = 0;
 
 	va_list args;
 	va_start(args, format);
 	if (format == NULL)
-	{
 		return (-1);
-	}
 	while (format != 0 && format[z] != '\0')
 	{
 		if (format[z] == '%')
@@ -26,9 +20,7 @@ int _printf(const char *format, ...)
 			z++;
 			b++;
 			if (format[z] == '\0')
-			{
 				return (-1);
-			}
 			else
 			{
 				while (i < 3)
@@ -49,18 +41,11 @@ int _printf(const char *format, ...)
 			}
 		}
 		else
-		{
 			putchar(format[z]);
-		}
 		i = 0;
 		z++;
 	}
-	if (len != 0)
-	{
-		len += z - (b * 2);
-		return (len);
-	}
-	z = z - b;
+	len += z - (b * 2);
+	return (len);
 	va_end(args);
-	return (z);
 }
