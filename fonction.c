@@ -46,9 +46,13 @@ int _printf(const char *format, ...)
                     if (format[z] == ops[i].opp)
                     {
                         ops[i].f(args);
+                        break;
                     }
                     i++;
                 }
+            }
+            else
+            {
             }
         }
         if (i == 3)
