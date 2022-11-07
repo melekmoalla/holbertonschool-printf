@@ -81,7 +81,7 @@ int _printf(const char *format, ...)
     }
     if (len != 0)
     {
-        len += z - 1 - b;
+        len += z - (b*2);
         return (len);
     }
     z = z - b;
