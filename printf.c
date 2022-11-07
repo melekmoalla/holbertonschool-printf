@@ -7,9 +7,9 @@
  */
 int printf_char(va_list args)
 {
-    int a;
-    a = printf("%c", va_arg(args, int));
-    return (a);
+	int a;
+	a = printf("%c", va_arg(args, int));
+	return (a);
 }
 /**
  * printf_st - Entry point
@@ -18,10 +18,10 @@ int printf_char(va_list args)
  */
 int printf_st(va_list args)
 {
-    int a;
-    char *st = va_arg(args, char *);
-    a = printf("%s", st);
-    return (a);
+	int a;
+	char *st = va_arg(args, char *);
+	a = printf("%s", st);
+	return (a);
 }
 /**
  * printf_persent - Entry point
@@ -29,6 +29,6 @@ int printf_st(va_list args)
  */
 int printf_persent()
 {
-    putchar('%');
-    return (1);
+	putchar('%');
+	return (1);
 }
