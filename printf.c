@@ -25,7 +25,6 @@ int printf_st(va_list args)
 }
 /**
  * printf_persent - Entry point
- *@args:va_list
  * Return: 1
  */
 int printf_persent()
