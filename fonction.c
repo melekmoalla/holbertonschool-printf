@@ -39,7 +39,11 @@ int _printf(const char *format, ...)
 
             z++;
             b++;
-            if (format[z] != '\0')
+            if (format[z] == '\0')
+            {
+                return (-1);
+            }
+            else
             {
                 while (i < 3)
                 {
@@ -50,15 +54,13 @@ int _printf(const char *format, ...)
                     }
                     i++;
                 }
-            }
-            if (i == 3)
-            {
-                b = b - 1;
-                z = z - 1;
-                putchar(format[z]);
-            }
-            else
-            {
+
+                if (i == 3)
+                {
+                    b = b - 1;
+                    z = z - 1;
+                    putchar(format[z]);
+                }
             }
         }
         else
