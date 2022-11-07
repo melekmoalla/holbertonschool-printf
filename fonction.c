@@ -20,7 +20,6 @@ int _printf(const char *format, ...)
 {
 
     op_t ops[] = {
-        {'%', printf_persent},
         {'c', printf_char},
         {'s', printf_st}};
 
@@ -31,8 +30,9 @@ int _printf(const char *format, ...)
 
     va_start(args, format);
 
-    while (format != 0 && format[z] != '\n')
+    while (format != 0 && format[z] != '\0')
     {
+
         if (format[z] == '%')
         {
             z++;
@@ -45,15 +45,15 @@ int _printf(const char *format, ...)
                 i++;
             }
         }
-        else
+
         {
-            _putchar(format[z]);
+            putchar(format[z]);
         }
+
         i = 0;
         z++;
     }
     printf("\n");
-
     va_end(args);
-    return (0);
+    return (z);
 }
