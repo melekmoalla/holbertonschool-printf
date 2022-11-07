@@ -6,9 +6,8 @@ void printf_char(va_list args)
 }
 void printf_st(va_list args)
 {
-    char *st = va_arg(args, char *);
 
-    printf("%s", st ? st : "(nil)");
+    printf("%s", va_arg(args, int));
 }
 void printf_persent()
 {
@@ -25,6 +24,7 @@ int _printf(const char *format, ...)
 
     int i = 0;
     int z = 0;
+    int b = 0;
 
     va_list args;
 
@@ -36,6 +36,7 @@ int _printf(const char *format, ...)
         if (format[z] == '%')
         {
             z++;
+            b++;
             while (i < 2)
             {
                 if (format[z] == ops[i].opp)
@@ -45,7 +46,7 @@ int _printf(const char *format, ...)
                 i++;
             }
         }
-
+        else
         {
             putchar(format[z]);
         }
@@ -53,6 +54,7 @@ int _printf(const char *format, ...)
         i = 0;
         z++;
     }
+    z = z - b;
     va_end(args);
     return (z);
 }
