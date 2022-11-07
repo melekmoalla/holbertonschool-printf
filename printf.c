@@ -2,7 +2,7 @@
 
 /**
  * printf_char - Entry point
- *@argc:va_list
+ *@args:va_list
  * Return: a
  */
 int printf_char(va_list args)
@@ -13,7 +13,7 @@ int printf_char(va_list args)
 }
 /**
  * printf_st - Entry point
- *@argc:va_list
+ *@args:va_list
  * Return: a
  */
 int printf_st(va_list args)
@@ -25,7 +25,7 @@ int printf_st(va_list args)
 }
 /**
  * printf_persent - Entry point
- *@argc:va_list
+ *@args:va_list
  * Return: 1
  */
 int printf_persent()
