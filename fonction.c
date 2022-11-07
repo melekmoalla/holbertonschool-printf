@@ -41,7 +41,7 @@ int _printf(const char *format, ...)
             b++;
             if (format[z] != '\0')
             {
-                while (i < 2)
+                while (i < 3)
                 {
                     if (format[z] == ops[i].opp)
                     {
@@ -50,9 +50,12 @@ int _printf(const char *format, ...)
                     i++;
                 }
             }
-            else
-            {
-            }
+        }
+        if (i == 3)
+        {
+            b = b - 1;
+            z = z - 1;
+            putchar(format[z]);
         }
         else
         {
