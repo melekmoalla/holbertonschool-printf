@@ -1,90 +1,110 @@
 #include "main.h"
 
+/**
+ * printf_char - Entry point
+ *
+ * Return: a
+ */
 int printf_char(va_list args)
 {
-    int a;
-    a = printf("%c", va_arg(args, int));
-    return (a);
+	int a;
+	a = printf("%c", va_arg(args, int));
+	return (a);
 }
+/**
+ * printf_st - Entry point
+ *
+ * Return: a
+ */
 int printf_st(va_list args)
 {
-    int a;
-    char *st = va_arg(args, char *);
-    a = printf("%s", st);
-    return (a);
+	int a;
+	char *st = va_arg(args, char *);
+	a = printf("%s", st);
+	return (a);
 }
+/**
+ * printf_persent - Entry point
+ *
+ * Return: 1
+ */
 int printf_persent()
 {
-    putchar('%');
-    return (1);
+	putchar('%');
+	return (1);
 }
 
+/**
+ * _printf - Entry point
+ *
+ * Return: 0 or len or z
+ */
 int _printf(const char *format, ...)
 {
 
-    op_t ops[] = {
-        {'c', printf_char},
-        {'s', printf_st},
-        {'%', printf_persent}};
+	op_t ops[] = {
+		{'c', printf_char},
+		{'s', printf_st},
+		{'%', printf_persent}};
 
-    int i = 0;
-    int z = 0;
-    int b = 0;
-    int len = 0;
+	int i = 0;
+	int z = 0;
+	int b = 0;
+	int len = 0;
 
-    va_list args;
+	va_list args;
 
-    va_start(args, format);
-    if (format == NULL)
-    {
-        return (-1);
-    }
-    while (format != 0 && format[z] != '\0')
-    {
+	va_start(args, format);
+	if (format == NULL)
+	{
+		return (-1);
+	}
+	while (format != 0 && format[z] != '\0')
+	{
 
-        if (format[z] == '%')
-        {
+		if (format[z] == '%')
+		{
 
-            z++;
-            b++;
-            if (format[z] == '\0')
-            {
-                return (-1);
-            }
-            else
-            {
-                while (i < 3)
-                {
-                    if (format[z] == ops[i].opp)
-                    {
-                        len += ops[i].f(args);
-                        break;
-                    }
-                    i++;
-                }
+			z++;
+			b++;
+			if (format[z] == '\0')
+			{
+				return (-1);
+			}
+			else
+			{
+				while (i < 3)
+				{
+					if (format[z] == ops[i].opp)
+					{
+						len += ops[i].f(args);
+						break;
+					}
+					i++;
+				}
 
-                if (i == 3)
-                {
-                    b = b - 1;
-                    z = z - 1;
-                    putchar(format[z]);
-                }
-            }
-        }
-        else
-        {
-            putchar(format[z]);
-        }
+				if (i == 3)
+				{
+					b = b - 1;
+					z = z - 1;
+					putchar(format[z]);
+				}
+			}
+		}
+		else
+		{
+			putchar(format[z]);
+		}
 
-        i = 0;
-        z++;
-    }
-    if (len != 0)
-    {
-        len += z - (b*2);
-        return (len);
-    }
-    z = z - b;
-    va_end(args);
-    return (z);
+		i = 0;
+		z++;
+	}
+	if (len != 0)
+	{
+		len += z - (b * 2);
+		return (len);
+	}
+	z = z - b;
+	va_end(args);
+	return (z);
 }
