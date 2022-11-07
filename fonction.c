@@ -55,4 +55,5 @@ int _printf(const char *format, ...)
     printf("\n");
 
     va_end(args);
+    return (0);
 }
