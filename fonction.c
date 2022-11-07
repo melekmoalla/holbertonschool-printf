@@ -6,13 +6,10 @@ void printf_char(va_list args)
 }
 void printf_st(va_list args)
 {
-
     printf("%s", va_arg(args, int));
 }
 void printf_persent()
 {
-
-    printf("%");
 }
 
 int _printf(const char *format, ...)
