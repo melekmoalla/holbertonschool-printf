@@ -36,4 +36,24 @@ int printf_persent(__attribute__((unused)) va_list args)
 	putchar('%');
 	return (1);
 }
+/**
+ * printf_persent - Entry point
+ * *@args:va_list
+ * Return: 1
+ */
+int printf_integer(__attribute__((unused)) va_list args)
+{
+	putchar('%');
+	return (1);
+}
+void printf_de(va_list args)
+{
+	printf("%d", va_arg(args, int));
+}
+void printf_int(va_list args)
+{
+	printf("%i", va_arg(args, int));
+}
+
+
 

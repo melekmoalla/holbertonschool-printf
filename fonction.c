@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	op_t ops[] = {{'c', printf_char}, {'s', printf_st}, {'%', printf_persent}};
+	op_t ops[] = {{'c', printf_char}, {'s', printf_st}, {'%', printf_persent}, {'d', printf_de}, {'i', printf_int}};
 	int i = 0, z = 0, b = 0, len = 0;
 
 	va_list args;
@@ -26,13 +26,13 @@ int _printf(const char *format, ...)
 			}
 			else
 			{
-				for (i = 0; i < 3; i++)
+				for (i = 0; i < 5; i++)
 					if (format[z] == ops[i].opp)
 					{
 						len += ops[i].f(args);
 						break;
 					}
-				if (i == 3)
+				if (i == 5)
 				{
 					b = b - 1;
 					z = z - 1;
