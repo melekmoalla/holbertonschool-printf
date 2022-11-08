@@ -6,7 +6,7 @@
  */
 int _printf(const char *format, ...)
 {
-	op_t ops[] = {{'c', printf_char}, {'s', printf_st}, {'%', printf_persent}, 
+	op_t ops[] = {{'c', printf_char}, {'s', printf_st}, {'%', printf_persent},
 	{'d', printf_de}, {'i', printf_de}};
 	int i = 0, z = 0, b = 0, len = 0;
 	va_list args;
