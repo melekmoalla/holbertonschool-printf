@@ -1,4 +1,5 @@
 #include "main.h"
+#include <math.h>
 /**
  * printf_char - Entry point
  *@args:va_list
@@ -6,9 +7,10 @@
  */
 int printf_char(va_list args)
 {
-	int a;
+	int a = 0;
 
-	a = printf("%c", va_arg(args, int));
+	putchar(va_arg(args, int));
+	a++;
 	return (a);
 }
 /**
@@ -18,12 +20,14 @@ int printf_char(va_list args)
  */
 int printf_st(va_list args)
 {
-	int a;
+	int i = 0;
 
 	char *st = va_arg(args, char *);
-
-	a = printf("%s", st);
-	return (a);
+	if (st == NULL)
+		st = "(null)";
+	for (i = 0; st[i] != '\0'; i++)
+		putchar(st[i]);
+	return (i);
 }
 /**
  * printf_persent - Entry point
@@ -35,7 +39,6 @@ int printf_persent(__attribute__((unused)) va_list args)
 	putchar('%');
 	return (1);
 }
-
 /**
  * printf_de - Entry point
  * *@args:va_list
@@ -43,20 +46,28 @@ int printf_persent(__attribute__((unused)) va_list args)
  */
 int printf_de(va_list args)
 {
-	int a;
+	long a, num;
+	int i = 0;
 
-	a = printf("%d", va_arg(args, int));
-	return (a);
-}
-/**
- * printf_int - Entry point
- * *@args:va_list
- * Return: 1
- */
-int printf_int(va_list args)
-{
-	int a;
+	num = va_arg(args, int);
+	if (num < 0)
+	{
+		num *= -1;
+		putchar('-');
+		i++;
+	}
 
-	a = printf("%i", va_arg(args, int));
-	return (a);
+	a = 1;
+	while ((num / a) >= 10)
+	{
+		a *= 10;
+	}
+	while (a != 0)
+	{
+		putchar((num / a) + '0');
+		num = num - ((num / a) * a);
+		a = a / 10;
+		i++;
+	}
+	return (i);
 }

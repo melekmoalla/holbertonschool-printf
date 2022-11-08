@@ -15,6 +15,5 @@ int printf_char(va_list args);
 int printf_st(va_list args);
 int printf_persent(va_list args);
 int printf_de(va_list args);
-int printf_int(va_list args);
 int _printf(const char *format, ...);
 #endif
