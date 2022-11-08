@@ -46,14 +46,16 @@ int printf_integer(__attribute__((unused)) va_list args)
 	putchar('%');
 	return (1);
 }
-void printf_de(va_list args)
+int printf_de(va_list args)
 {
-	printf("%d", va_arg(args, int));
+	int a;
+	a = printf("%d", va_arg(args, int));
+	return (a);
 }
-void printf_int(va_list args)
+int printf_int(va_list args)
 {
-	printf("%i", va_arg(args, int));
+	int a;
+
+	a = printf("%i", va_arg(args, int));
+	return (a);
 }
-
-
-
