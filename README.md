@@ -1,6 +1,6 @@
-# fonction printf
+<h1> fonction printf </h1>
 
-<h2>prototype</h2>
+<h3>prototype</h3>
 
 ```
 file: fonction.c
@@ -16,9 +16,12 @@ file: printf
 3- int printf_persent(va_list args);
 4- int printf_de(va_list args);
 ```
+
 # Usage
-In fonction _printf and all function in thr file printf are used function putchar because method of printf it displays character by character
+
+In fonction \_printf and all function in thr file printf are used function putchar because method of printf it displays character by character
 <br>
+
 <p>=> File printf is linked in  the file fonction when you want to print any caracter in the above table</p>
 <br>
 <table border="2">
@@ -250,7 +253,4 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 - Upon successful return, all functions return the number of characters written, excluding the terminating null character used to end the string
 - if the output was truncated due to this limit, the return value is the number of characters that could have been written. Notice that a value equal or larger than count indicates a truncation. Only when the returned value is non-negative and less than count, the string has been completely written. If any error is encountered, -1 is returned.
-- If format is set to NULL  nothing is written and just the formatted length is returned.
-
-
-
+- If format is set to NULL nothing is written and just the formatted length is returned.
