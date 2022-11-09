@@ -72,7 +72,7 @@ output:
 
 #
 
-<table border="4">
+<table border="3">
     <thead>
         <tr>
             <th>character</th>
@@ -123,7 +123,7 @@ output :
 
 #
 
-<table border="4">
+<table border="3">
     <thead>
         <tr>
             <th>character</th>
@@ -174,7 +174,7 @@ output:
 
 #
 
-<table border="4">
+<table border="3">
     <thead>
         <tr>
             <th>character</th>
