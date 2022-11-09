@@ -16,9 +16,10 @@ file: printf
 3- int printf_persent(va_list args);
 4- int printf_de(va_list args);
 ```
-
+# Usage
+In fonction _printf and all function in thr file printf are used function putchar because method of printf it displays character by character
 <br>
-<p>=> File printf is loinked in  the file fonction when you want to print any caracter in the above table</p>
+<p>=> File printf is linked in  the file fonction when you want to print any caracter in the above table</p>
 <br>
 <table border="2">
     <thead>
@@ -30,7 +31,7 @@ file: printf
     <tbody>
         <tr>
             <td>1- "c"</td>
-            <td>int; single caracter</td>
+            <td>int; single character</td>
         </tr>   
         <tr>
             <td colspan="2">Example</td>
@@ -48,19 +49,20 @@ file: printf
     */
     int main(void)
     {
-	    int len, len2;
+        int len, len2;
 
-	    len = _printf("%c", 'S');
-	    len2 = printf("%c", 'S');
-	    fflush(stdout);
-	    if (len != len2)
-	    {
-		    printf("Lengths differ.\n");
-		    fflush(stdout);
-		    return (1);
-	    }   
-	    return (0);
+        len = _printf("%c", 'S');
+        len2 = printf("%c", 'S');
+        fflush(stdout);
+        if (len != len2)
+        {
+    	    printf("Lengths differ.\n");
+    	    fflush(stdout);
+    	    return (1);
+        }
+        return (0);
     }
+
 output:
 
     ss
@@ -111,11 +113,13 @@ output:
       }
       return (0);
     }
+
 output :
 
     This sentence is retrieved from va_args!
 
     This sentence is retrieved from va_args!
+
 </td>
 </tr>
 </tbody>
@@ -163,6 +167,7 @@ output :
         }
         return (0);
     }
+
 output:
 
     %%
@@ -191,7 +196,6 @@ output:
         </tr>
 <tr>
     <td colspan="2"><br>
-
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -229,4 +233,24 @@ output:
 </tbody>
 </table>
 
-#
+# Test Compilation
+
+code will be compiled this way
+
+```
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
+```
+
+- As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
+- Our main files will include your main header file (main.h): #include main.h
+
+* You might want to look at the gcc flag -Wno-format when testing with your printf and the standard printf
+
+# Return Value
+
+- Upon successful return, all functions return the number of characters written, excluding the terminating null character used to end the string
+- if the output was truncated due to this limit, the return value is the number of characters that could have been written. Notice that a value equal or larger than count indicates a truncation. Only when the returned value is non-negative and less than count, the string has been completely written. If any error is encountered, -1 is returned.
+- If format is set to NULL  nothing is written and just the formatted length is returned.
+
+
+
