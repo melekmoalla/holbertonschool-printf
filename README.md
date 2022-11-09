@@ -1,21 +1,22 @@
 # fonction printf
 
-<h2>definition</h2>
+<h2>prototype</h2>
 
-<img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Printf.svg/563px-Printf.svg.png"/></h2>
+```
+file: fonction.c
 
+int _printf(const char *format, ...);
 ```
 
 ```
-
-```
-file main.h:
+file: printf
 
 1- int printf_char(va_list args);
 2- int printf_st(va_list args);
 3- int printf_persent(va_list args);
 4- int printf_de(va_list args);
 ```
+<p>=> File printf is loinked in  the file fonction when you want to print any caracter in the above table  
 
 <table>
     <thead>
@@ -62,7 +63,7 @@ file main.h:
 - Return: 0 on success, error code otherwise
 
   int main(void)
-  
+
   {
 
   int len, len2;
