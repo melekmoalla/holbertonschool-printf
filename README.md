@@ -1,6 +1,6 @@
 # fonction printf
 
-<h2>definition
+<h2>definition :
 <img src ="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Printf.svg/563px-Printf.svg.png"/></h2>
 
 ```
