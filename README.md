@@ -19,29 +19,31 @@ file: printf
 
 # Usage
 
-In fonction \_printf and all function in thr file printf are used function putchar because method of printf it displays character by character
-<br>
+- In fonction \_printf and all function in thr file printf are used function putchar because method of printf it displays character by character
+  <br>
+
+- all the prototype
 
 <p>=> File printf is linked in  the file fonction when you want to print any caracter in the above table</p>
 <br>
 <table border="2">
-    <thead>
-        <tr>
-            <th>character</th>
-            <th>argument type; Printed As</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>1- "c"</td>
-            <td>int; single character</td>
-        </tr>   
-        <tr>
-            <td colspan="2">Example</td>
-            <td></td>
-        </tr>
-        <tr>
-            <td colspan="2"><br>
+	<thead>
+		<tr>
+			<th>character</th>
+			<th>argument type; Printed As</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td>1- "c"</td>
+			<td>int; single character</td>
+		</tr>   
+		<tr>
+			<td colspan="2">Example</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td colspan="2"><br>
 
     #include "main.h"
 
@@ -52,18 +54,18 @@ In fonction \_printf and all function in thr file printf are used function putch
     */
     int main(void)
     {
-        int len, len2;
+    	int len, len2;
 
-        len = _printf("%c", 'S');
-        len2 = printf("%c", 'S');
-        fflush(stdout);
-        if (len != len2)
-        {
-    	    printf("Lengths differ.\n");
-    	    fflush(stdout);
-    	    return (1);
-        }
-        return (0);
+    	len = _printf("%c", 'S');
+    	len2 = printf("%c", 'S');
+    	fflush(stdout);
+    	if (len != len2)
+    	{
+    		printf("Lengths differ.\n");
+    		fflush(stdout);
+    		return (1);
+    	}
+    	return (0);
     }
 
 output:
@@ -78,20 +80,20 @@ output:
 #
 
 <table border="2">
-    <thead>
-        <tr>
-            <th>character</th>
-            <th>argument type; Printed As</th>
-        </tr>
-    </thead>
-    <tbody>
-       <td>2 - "s"</td>
-          <td>char *; print characters from the string untli a  '\0' or the number of the charcters given by the precision</td>
-          </tr>
-        <tr>
-            <td colspan="2">Example</td>
-            <td></td>
-        </tr>
+	<thead>
+		<tr>
+			<th>character</th>
+			<th>argument type; Printed As</th>
+		</tr>
+	</thead>
+	<tbody>
+	   <td>2 - "s"</td>
+		  <td>char *; print characters from the string untli a  '\0' or the number of the charcters given by the precision</td>
+		  </tr>
+		<tr>
+			<td colspan="2">Example</td>
+			<td></td>
+		</tr>
 <tr>
 <td colspan="2"><br>
 
@@ -131,22 +133,22 @@ output :
 #
 
 <table border="2">
-    <thead>
-        <tr>
-            <th>character</th>
-            <th>argument type; Printed As</th>
-        </tr>
-    </thead>
-    <tbody>
+	<thead>
+		<tr>
+			<th>character</th>
+			<th>argument type; Printed As</th>
+		</tr>
+	</thead>
+	<tbody>
 <tr>
-            <td>3 - "%"</td>
-            <td>the result is '%'</td>
-          </tr>
-            <td colspan="2">Example</td>
-            <td></td>
-        </tr>
+			<td>3 - "%"</td>
+			<td>the result is '%'</td>
+		  </tr>
+			<td colspan="2">Example</td>
+			<td></td>
+		</tr>
 <tr>
-    <td colspan="2"><br>
+	<td colspan="2"><br>
 
     #include "main.h"
 
@@ -157,18 +159,18 @@ output :
     */
     int main(void)
     {
-        int len, len2;
+    	int len, len2;
 
-        len = _printf("%%");
-        len2 = printf("%%");
-        fflush(stdout);
-        if (len != len2)
-        {
-            printf("Lengths differ.\n");
-            fflush(stdout);
-            return (1);
-        }
-        return (0);
+    	len = _printf("%%");
+    	len2 = printf("%%");
+    	fflush(stdout);
+    	if (len != len2)
+    	{
+    		printf("Lengths differ.\n");
+    		fflush(stdout);
+    		return (1);
+    	}
+    	return (0);
     }
 
 output:
@@ -183,22 +185,22 @@ output:
 #
 
 <table border="2">
-    <thead>
-        <tr>
-            <th>character</th>
-            <th>argument type; Printed As</th>
-        </tr>
-    </thead>
-    <tbody>
-      <tr>
-              <td>4 - "d","i"</td>
-              <td>int; decimal number</tr>
-        </tr>
-            <td colspan="2">Example</td>
-            <td></td>
-        </tr>
+	<thead>
+		<tr>
+			<th>character</th>
+			<th>argument type; Printed As</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+			  <td>4 - "d","i"</td>
+			  <td>int; decimal number</tr>
+		</tr>
+			<td colspan="2">Example</td>
+			<td></td>
+		</tr>
 <tr>
-    <td colspan="2"><br>
+	<td colspan="2"><br>
 
     #include <stdio.h>
     #include <stdlib.h>
@@ -212,18 +214,18 @@ output:
     */
     int main(void)
     {
-        int len, len2;
+    	int len, len2;
 
-        len = _printf("%d == %i\n", 1024, 1024);
-        len2 = printf("%d == %i\n", 1024, 1024);
-        fflush(stdout);
-        if (len != len2)
-        {
-            printf("Lengths differ.\n");
-            fflush(stdout);
-            return (1);
-        }
-        return (0);
+    	len = _printf("%d == %i\n", 1024, 1024);
+    	len2 = printf("%d == %i\n", 1024, 1024);
+    	fflush(stdout);
+    	if (len != len2)
+    	{
+    		printf("Lengths differ.\n");
+    		fflush(stdout);
+    		return (1);
+    	}
+    	return (0);
     }
 
 output:
@@ -254,3 +256,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 - Upon successful return, all functions return the number of characters written, excluding the terminating null character used to end the string
 - if the output was truncated due to this limit, the return value is the number of characters that could have been written. Notice that a value equal or larger than count indicates a truncation. Only when the returned value is non-negative and less than count, the string has been completely written. If any error is encountered, -1 is returned.
 - If format is set to NULL nothing is written and just the formatted length is returned.
+
+#
+
+<h2>I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life <br> </h2>
