@@ -16,9 +16,11 @@ file: printf
 3- int printf_persent(va_list args);
 4- int printf_de(va_list args);
 ```
-<p>=> File printf is loinked in  the file fonction when you want to print any caracter in the above table  
 
-<table>
+<br>
+<p>=> File printf is loinked in  the file fonction when you want to print any caracter in the above table</p>
+<br>
+<table border="1">
     <thead>
         <tr>
             <th>character</th>
@@ -29,54 +31,101 @@ file: printf
         <tr>
             <td>1- "c"</td>
             <td>int; single caracter</td>
+        </tr>   
+        <tr>
+            <td colspan="2">Example</td>
+            <td></td>
         </tr>
         <tr>
-            <td>2 - "s"</td>
-            <td>char *; print characters from the string untli a  '\0' or the number of the charcters given by the precision</td>
-        </tr>
-        <tr>
-            <td>3 - "%"</td>
-            <td>the result is '%'</td>
-        </tr>
-            <tr>
-            <td>4 - "d","i"</td>
-            <td>int; decimal number</tr>
-        </tr>
-    </tbody>
-</table>
-
-<table>
-    <thead>
-     <tr>
-        <th>Example</th>
-    </tr>
-    </thead>
-    <tbody>
-        <td>
+            <td colspan="2">
 
             #include <stdio.h>
             #include <stdlib.h>
             #include "main.h"
 
-- main - Entry point
--
-- Return: 0 on success, error code otherwise
+    - main - Entry point
+    -
+    - Return: 0 on success, error code otherwise
 
-  int main(void)
+    int main(void)
 
-  {
+    {
 
-  int len, len2;
+    int len, len2;
 
-        len = _printf("A char inside a sentence: %c. Did it work?\n", 'F');
-        len2 = printf("A char inside a sentence: %c. Did it work?\n", 'F');
-        fflush(stdout);
-        if (len != len2)
-        {
-        	printf("Lengths differ.\n");
-        	fflush(stdout);
-        	return (1);
-        }
-        return (0);
+          len = _printf("A char inside a sentence: %c. Did it work?\n", 'F');
+          len2 = printf("A char inside a sentence: %c. Did it work?\n", 'F');
+          fflush(stdout);
+          if (len != len2)
+          {
+          	printf("Lengths differ.\n");
+          	fflush(stdout);
+          	return (1);
+          }
+          return (0);
 
-    </td>
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+<br>
+<table border="1">
+    <thead>
+        <tr>
+            <th>character</th>
+            <th>argument type; Printed As</th>
+        </tr>
+    </thead>
+    <tbody>
+       <td>2 - "s"</td>
+          <td>char *; print characters from the string untli a  '\0' or the number of the charcters given by the precision</td>
+          </tr>
+        <tr>
+            <td colspan="2">Example</td>
+            <td></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+
+            #include <stdio.h>
+            #include <stdlib.h>
+            #include "main.h"
+
+    - main - Entry point
+    -
+    - Return: 0 on success, error code otherwise
+
+    int main(void)
+
+    {
+
+    int len, len2;
+
+          len = _printf("A char inside a sentence: %c. Did it work?\n", 'F');
+          len2 = printf("A char inside a sentence: %c. Did it work?\n", 'F');
+          fflush(stdout);
+          if (len != len2)
+          {
+          	printf("Lengths differ.\n");
+          	fflush(stdout);
+          	return (1);
+          }
+          return (0);
+
+</td>
+</tr>
+</tbody>
+</table>
+<br>
+ <td>2 - "s"</td>
+          <td>char *; print characters from the string untli a  '\0' or the number of the charcters given by the precision</td>
+          </tr>
+          <tr>
+              <td>3 - "%"</td>
+              <td>the result is '%'</td>
+          </tr>
+              <tr>
+              <td>4 - "d","i"</td>
+              <td>int; decimal number</tr>
+          </tr>
