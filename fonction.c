@@ -1,8 +1,8 @@
 #include "main.h"
 /**
- * _printf - Entry point
+ * _printf - function to print any thing we want
  * @format: const char
- * Return: 0 or len or z
+ * Return: 0 or len
  */
 int _printf(const char *format, ...)
 {

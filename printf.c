@@ -1,7 +1,7 @@
 #include "main.h"
-#include <math.h>
+
 /**
- * printf_char - Entry point
+ * printf_char - to print charactere
  *@args:va_list
  * Return: a
  */
@@ -14,7 +14,7 @@ int printf_char(va_list args)
 	return (a);
 }
 /**
- * printf_st - Entry point
+ * printf_st - to print string
  *@args:va_list
  * Return: a
  */
@@ -31,7 +31,7 @@ int printf_st(va_list args)
 	return (i);
 }
 /**
- * printf_persent - Entry point
+ * printf_persent - Entry persent
  * *@args:va_list
  * Return: 1
  */
@@ -41,7 +41,7 @@ int printf_persent(__attribute__((unused)) va_list args)
 	return (1);
 }
 /**
- * printf_de - Entry point
+ * printf_de - to print degit number and any thing but display number
  * *@args:va_list
  * Return: 1
  */
