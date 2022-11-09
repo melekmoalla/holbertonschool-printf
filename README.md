@@ -20,7 +20,7 @@ file: printf
 <br>
 <p>=> File printf is loinked in  the file fonction when you want to print any caracter in the above table</p>
 <br>
-<table border="4">
+<table border="2">
     <thead>
         <tr>
             <th>character</th>
@@ -72,7 +72,7 @@ output:
 
 #
 
-<table border="3">
+<table border="2">
     <thead>
         <tr>
             <th>character</th>
@@ -123,7 +123,7 @@ output :
 
 #
 
-<table border="3">
+<table border="2">
     <thead>
         <tr>
             <th>character</th>
@@ -174,7 +174,7 @@ output:
 
 #
 
-<table border="3">
+<table border="2">
     <thead>
         <tr>
             <th>character</th>
