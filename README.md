@@ -259,4 +259,5 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 #
 
-<h2>- I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life <br> </h2>
+<h3>- I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life <br> </h3>
+
