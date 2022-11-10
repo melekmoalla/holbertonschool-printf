@@ -47,7 +47,7 @@ int printf_persent(__attribute__((unused)) va_list args)
  */
 int printf_de(va_list args)
 {
-	long a, num;
+	long int a, num;
 	int i = 0;
 
 	num = va_arg(args, int);
