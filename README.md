@@ -1,9 +1,9 @@
-<h1> fonction printf </h1>
+<h1> Function printf </h1>
 
-<h3>prototype</h3>
+<h3>Prototypes</h3>
 
 ```
-file: fonction.c
+file: function.c
 
 int _printf(const char *format, ...);
 ```
@@ -19,12 +19,12 @@ file: printf
 
 # Usage
 
-- In fonction \_printf and all function in thr file printf are used function putchar because method of printf it displays character by character
+- In function \_printf and all functions in the file printf are using the putchar function because the method of printf displays character by character.
   <br>
 
-- all the prototype
+- All the prototypes is linked in main.h
 
-<p>=> File printf is linked in  the file fonction when you want to print any caracter in the above table</p>
+<p>=> The printf file is linked to the function file when you want to print any character in the table above</p>
 <br>
 <table border="2">
 	<thead>
@@ -40,7 +40,6 @@ file: printf
 		</tr>   
 		<tr>
 			<td colspan="2">Example</td>
-			<td></td>
 		</tr>
 		<tr>
 			<td colspan="2"><br>
@@ -88,11 +87,10 @@ output:
 	</thead>
 	<tbody>
 	   <td>2 - "s"</td>
-		  <td>char *; print characters from the string untli a  '\0' or the number of the charcters given by the precision</td>
+		  <td>char *; print characters from the string until a '\0' or the number of the characters given by precision</td>
 		  </tr>
 		<tr>
 			<td colspan="2">Example</td>
-			<td></td>
 		</tr>
 <tr>
 <td colspan="2"><br>
@@ -142,10 +140,9 @@ output :
 	<tbody>
 <tr>
 			<td>3 - "%"</td>
-			<td>the result is '%'</td>
+			<td>The result is '%'</td>
 		  </tr>
 			<td colspan="2">Example</td>
-			<td></td>
 		</tr>
 <tr>
 	<td colspan="2"><br>
@@ -187,7 +184,7 @@ output:
 <table border="2">
 	<thead>
 		<tr>
-			<th>character</th>
+			<th>Character</th>
 			<th>argument type; Printed As</th>
 		</tr>
 	</thead>
@@ -197,7 +194,6 @@ output:
 			  <td>int; decimal number</tr>
 		</tr>
 			<td colspan="2">Example</td>
-			<td></td>
 		</tr>
 <tr>
 	<td colspan="2"><br>
@@ -249,7 +245,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 - As a consequence, be careful not to push any c file containing a main function in the root directory of your project (you could have a test folder containing all your tests files including main functions)
 - Our main files will include your main header file (main.h): #include main.h
 
-* You might want to look at the gcc flag -Wno-format when testing with your printf and the standard printf
+* You might want to look at the gcc flag -Wno-format while testing with your printf and the standard printf
 
 # Return Value
 
@@ -263,7 +259,5 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 # Author
 
-by Melek moalla
+By Melek moalla:<br>
 https://github.com/melekmoalla
-
-
