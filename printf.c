@@ -72,3 +72,22 @@ int printf_de(va_list args)
 	}
 	return (i);
 }
+/**
+ * printf_de - to print degit number and any thing but display number
+ * *@args:va_list
+ * Return: len of the string
+ */
+int printf_rev(va_list args)
+{
+	int i;
+	int b;
+	char *st = va_arg(args, char *);
+
+	b = strlen(st);
+	if (st == NULL)
+		st = "(null)";
+	for (i = b - 2; i >= 0; i--)
+		putchar(st[i]);
+	putchar('\n');
+	return (b);
+}
