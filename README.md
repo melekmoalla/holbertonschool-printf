@@ -305,7 +305,7 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 # Return Value
 
 - Upon successful return, all functions return the number of characters written, excluding the terminating null character used to end the string
-- if the output was truncated due to this limit, the return value is the number of characters that could have been written. Notice that a value equal or larger than count indicates a truncation. Only when the returned value is non-negative and less than count, the string has been completely written. If any error is encountered, -1 is returned.
+- If the output was truncated due to this limit, the return value is the number of characters that could have been written. Notice that a value equal or larger than count indicates a truncation. Only when the returned value is non-negative and less than count, the string has been completely written. If any error is encountered, -1 is returned.
 - If format is set to NULL nothing is written and just the formatted length is returned.
 
 #
@@ -314,5 +314,5 @@ $ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 -Wno-format *.c
 
 # Author
 
-By Melek moalla:<br>
+By Melek Moalla:<br>
 https://github.com/melekmoalla
