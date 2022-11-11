@@ -86,7 +86,7 @@ int printf_rev(va_list args)
 	b = strlen(st);
 	if (st == NULL)
 		st = "(null)";
-	for (i = b - 2; i >= 0; i--)
+	for (i = b; i >= 0; i--)
 		putchar(st[i]);
 	return (b);
 }
