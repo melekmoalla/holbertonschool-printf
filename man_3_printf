@@ -243,10 +243,6 @@
               that the number of bytes written exceeds it before the end
               of the array is reached.
 
-       S      (Not in C99 or C11, but in SUSv2, SUSv3, and SUSv4.)
-              Synonym for ls.  Don't use.
-
-
        %      A '%' is written.  No argument is converted.  The complete
               conversion specification is '%%'.
 .SH RETURN VALUE         top

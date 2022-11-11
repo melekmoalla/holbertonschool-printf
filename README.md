@@ -15,6 +15,7 @@ file: printf
 2- int printf_st(va_list args);
 3- int printf_persent(va_list args);
 4- int printf_de(va_list args);
+5- int printf_rev(va_list args);
 ```
 
 # Usage
@@ -44,32 +45,32 @@ file: printf
 		<tr>
 			<td colspan="2"><br>
 
-    #include "main.h"
+	#include "main.h"
 
-    /**
-    * main - Entry point
-    *
-    * Return: 0 on success, error code otherwise
-    */
-    int main(void)
-    {
-    	int len, len2;
+	/**
+	* main - Entry point
+	*
+	* Return: 0 on success, error code otherwise
+	*/
+	int main(void)
+	{
+		int len, len2;
 
-    	len = _printf("%c", 'S');
-    	len2 = printf("%c", 'S');
-    	fflush(stdout);
-    	if (len != len2)
-    	{
-    		printf("Lengths differ.\n");
-    		fflush(stdout);
-    		return (1);
-    	}
-    	return (0);
-    }
+		len = _printf("%c", 'S');
+		len2 = printf("%c", 'S');
+		fflush(stdout);
+		if (len != len2)
+		{
+			printf("Lengths differ.\n");
+			fflush(stdout);
+			return (1);
+		}
+		return (0);
+	}
 
 output:
 
-    ss
+	ss
 
 </td>
 </tr>
@@ -95,33 +96,33 @@ output:
 <tr>
 <td colspan="2"><br>
 
-    #include "main.h"
+	#include "main.h"
 
-    - main - Entry point
-    -
-    - Return: 0 on success, error code otherwise
+	- main - Entry point
+	-
+	- Return: 0 on success, error code otherwise
 
-    int main(void)
-    {
-    int len, len2;
+	int main(void)
+	{
+	int len, len2;
 
-      len = _printf("%s", "This sentence is retrieved from va_args!\n");
-      len2 = printf("%s", "This sentence is retrieved from va_args!\n");
-      fflush(stdout);
-      if (len != len2)
-      {
-      	printf("Lengths differ.\n");
-      	fflush(stdout);
-      	return (1);
-      }
-      return (0);
-    }
+	  len = _printf("%s", "This sentence is retrieved from va_args!\n");
+	  len2 = printf("%s", "This sentence is retrieved from va_args!\n");
+	  fflush(stdout);
+	  if (len != len2)
+	  {
+	  	printf("Lengths differ.\n");
+	  	fflush(stdout);
+	  	return (1);
+	  }
+	  return (0);
+	}
 
 output :
 
-    This sentence is retrieved from va_args!
+	This sentence is retrieved from va_args!
 
-    This sentence is retrieved from va_args!
+	This sentence is retrieved from va_args!
 
 </td>
 </tr>
@@ -147,32 +148,32 @@ output :
 <tr>
 	<td colspan="2"><br>
 
-    #include "main.h"
+	#include "main.h"
 
-    /**
-    * main - Entry point
-    *
-    * Return: 0 on success, error code otherwise
-    */
-    int main(void)
-    {
-    	int len, len2;
+	/**
+	* main - Entry point
+	*
+	* Return: 0 on success, error code otherwise
+	*/
+	int main(void)
+	{
+		int len, len2;
 
-    	len = _printf("%%");
-    	len2 = printf("%%");
-    	fflush(stdout);
-    	if (len != len2)
-    	{
-    		printf("Lengths differ.\n");
-    		fflush(stdout);
-    		return (1);
-    	}
-    	return (0);
-    }
+		len = _printf("%%");
+		len2 = printf("%%");
+		fflush(stdout);
+		if (len != len2)
+		{
+			printf("Lengths differ.\n");
+			fflush(stdout);
+			return (1);
+		}
+		return (0);
+	}
 
 output:
 
-    %%
+	%%
 
 </td>
 </tr>
@@ -198,36 +199,90 @@ output:
 <tr>
 	<td colspan="2"><br>
 
-    #include <stdio.h>
-    #include <stdlib.h>
-    #include <limits.h>
-    #include "main.h"
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include <limits.h>
+	#include "main.h"
 
-    /**
-    * main - Entry point
-    *
-    * Return: 0 on success, error code otherwise
-    */
-    int main(void)
-    {
-    	int len, len2;
+	/**
+	* main - Entry point
+	*
+	* Return: 0 on success, error code otherwise
+	*/
+	int main(void)
+	{
+		int len, len2;
 
-    	len = _printf("%d == %i\n", 1024, 1024);
-    	len2 = printf("%d == %i\n", 1024, 1024);
-    	fflush(stdout);
-    	if (len != len2)
-    	{
-    		printf("Lengths differ.\n");
-    		fflush(stdout);
-    		return (1);
-    	}
-    	return (0);
-    }
+		len = _printf("%d == %i\n", 1024, 1024);
+		len2 = printf("%d == %i\n", 1024, 1024);
+		fflush(stdout);
+		if (len != len2)
+		{
+			printf("Lengths differ.\n");
+			fflush(stdout);
+			return (1);
+		}
+		return (0);
+	}
 
 output:
 
-    1024 == 1024
-    1024 == 1024
+	1024 == 1024
+	1024 == 1024
+
+</td>
+</tr>
+</tbody>
+</table>
+
+#
+
+<table border="2">
+	<thead>
+		<tr>
+			<th>Character</th>
+			<th>argument type; Printed As</th>
+		</tr>
+	</thead>
+	<tbody>
+	  <tr>
+			  <td>4 - "r"</td>
+			  <td>char *; print reverseb characters from the string</tr>
+		</tr>
+			<td colspan="2">Example</td>
+		</tr>
+<tr>
+	<td colspan="2"><br>
+
+	#include <stdio.h>
+	#include <stdlib.h>
+	#include "main.h"
+
+	/**
+ 	* main - Entry point
+ 	*
+ 	* Return: 0 on success, error code otherwise
+ 	*/
+	int main(void)
+	{
+		int len, len2;
+
+		len = _printf("%r", "\nThis sentence is retrieved from va_args!");
+		len2 = printf("!sgra_av morf deveirter si ecnetnes sihT\n");
+		fflush(stdout);
+		if (len != len2)
+		{
+			printf("Lengths differ.\n");
+			fflush(stdout);
+			return (1);
+		}
+		return (0);
+	}
+
+output:
+
+	!sgra_av morf deveirter si ecnetnes sihT
+	!sgra_av morf deveirter si ecnetnes sihT
 
 </td>
 </tr>
