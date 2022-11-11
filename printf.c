@@ -73,7 +73,7 @@ int printf_de(va_list args)
 	return (i);
 }
 /**
- * printf_de - to print degit number and any thing but display number
+ * printf_rev - to print degit number and any thing but display number
  * *@args:va_list
  * Return: len of the string
  */
