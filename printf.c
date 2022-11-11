@@ -83,10 +83,10 @@ int printf_rev(va_list args)
 	int b;
 	char *st = va_arg(args, char *);
 
-	b = strlen(st);
+	b = strlen(st) - 1;
 	if (st == NULL)
 		st = "(null)";
 	for (i = b; i >= 0; i--)
 		putchar(st[i]);
-	return (b);
+	return (b + 1);
 }
