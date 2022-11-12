@@ -293,7 +293,8 @@
 
        printf(1), asprintf(3), puts(3), scanf(3), setlocale(3),
        strfromd(3), wcrtomb(3), wprintf(3), locale(5)
-COLOPHON
+
+.SH COLOPHON
 
        This page is part of release melek moalla  of the Linux man-pages project.
        A description of the project, information about reporting bugs,
