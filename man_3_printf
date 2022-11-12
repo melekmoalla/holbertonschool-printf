@@ -29,12 +29,6 @@
        arguments accessed via the variable-length argument facilities of
        stdarg(3)) are converted for output.
 
-       C99 and POSIX.1-2001 specify that the results are undefined if a
-       call to sprintf(), snprintf(), vsprintf(), or vsnprintf() would
-       cause copying to take place between objects that overlap (e.g.,
-       if the target string array and one of the supplied input
-       arguments refer to the same buffer).  See NOTES.
-
    - Format of the format string
 
        The format string is a character string, beginning and ending in
@@ -52,22 +46,7 @@
 
            %[$][flags][width][.precision][length modifier]conversion
 
-       The arguments must correspond properly (after type promotion)
-       with the conversion specifier.  By default, the arguments are
-       used in the order given, where each '*' (see Field width and
-       Precision below) and each conversion specifier asks for the next
-       argument (and it is an error if insufficiently many arguments are
-       given).  One can also specify explicitly which argument is taken,
-       at each place where an argument is required, by writing "%m$"
-       instead of '%' and "*m$" instead of '*', where the decimal
-       integer m denotes the position in the argument list of the
-       desired argument, indexed starting from 1.  Thus,
-
-           _printf("%*d", width, num);
-
-       and
-
-           _printf("%2$*1$d", width, num);
+       
 
        are equivalent.  The second style allows repeated references to
        the same argument.  The C99 standard does not include the style
@@ -80,16 +59,7 @@
        are specified, argument 2 must also be specified somewhere in the
        format string.
 
-       For some numeric conversions a radix character ("decimal point")
-       or thousands' grouping character is used.  The actual character
-       used depends on the LC_NUMERIC part of the locale.  (See
-       setlocale(3).)  The POSIX locale uses '.' as radix character, and
-       does not have a grouping character.  Thus,
 
-           printf("%'.2f", 1234567.89);
-
-       results in "1234567.89" in the POSIX locale, in "1234567,89" in
-       the nl_NL locale, and in "1.234.567,89" in the da_DK locale.
 
    - Flag characters
 
@@ -113,16 +83,11 @@
 
 
 
-       The five flag characters above are defined in the C99 standard.
+       the flag characters above are defined in the C99 standard.
        The Single UNIX Specification specifies one further flag
        character.
 
        glibc 2.2 adds one further flag character.
-
-       I      For decimal integer conversion (i, d) the output uses
-              the locale's alternative output digits, if any.  For
-              example, since glibc 2.2.3 this will give Arabic-Indic
-              digits in the Persian ("fa_IR") locale.
 
 
    - Conversion specifiers
@@ -173,7 +138,7 @@
               that the number of bytes written exceeds it before the end
               of the array is reached.
 
-       %      A '%' is written.  No argument is converted.  The complete
+       %      '%' is written.  No argument is converted.  The complete
               conversion specification is '%%'.
 
 .SH RETURN VALUE         top
