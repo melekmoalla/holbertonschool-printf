@@ -246,7 +246,7 @@ output:
 	</thead>
 	<tbody>
 	  <tr>
-			  <td>4 - "r"</td>
+			  <td>5 - "r"</td>
 			  <td>char *; print reverseb characters from the string</tr>
 		</tr>
 			<td colspan="2">Example</td>
